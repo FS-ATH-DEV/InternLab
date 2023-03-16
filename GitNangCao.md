@@ -48,7 +48,7 @@ git push -u origin HEAD
 #### V ) Xóa một branch.
 *Xóa branch ở local:*
 ```bash
-git push -D localBranchName 
+git branch -d localBranchName 
 ```
 *Xóa branch ở remote:*
 ```bash
