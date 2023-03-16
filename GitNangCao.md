@@ -59,3 +59,21 @@ git push origin -D remoteBranchName
 git fetch -p 
 ```
 `-p` nghĩa là "**prune**" sau khi sử dụng câu lệnh git trên những branch không còn trên remote sẽ đồng bộ và xóa khỏi local của bạn.
+
+
+#### VI ) Git Merge gộp nhánh.
+Nếu trong quá trình merge có bị conflict thì thao tác theo thứ tự
+
+1. Tìm file conflict trong tab source và fix nó.
+2. Sau khi fix hết các file bị conflict rồi thì dùng `git add .` hoặc add từng file
+3. Tiến hành thêm commit cho những file vừa fix conflict bằng câu lệnh `git commit --no-edit`, nếu muốn edit commit thì `git merge --continue`, còn nếu muốn tự viết commit thì cứ `git commit -m 'thông điệp'` như thường
+4. push hết lên với câu lệnh `git push`
+
+Nếu merge xong rồi mới nhận ra mình không cần merge nữa thì có thể dùng `git reset --hard <commit-của bạn-trước-khi-merge>`. Cách này áp dụng cho cả đã push code hay chưa push đều được.
+
+> Tips: `git pull` là sự kết hợp giữa `git fetch` và `git merge`. Trong thực tế thì mình dùng `git pull` chứ ít khi dùng `git merge` vì mình luôn muốn fetch data mới nhất từ origin về rồi mới merge.
+>
+> Bạn cũng có thể tạo merge request (một số chỗ gọi là pull request) bằng git server như Github thay vì dùng câu lệnh. Những merge request này được tạo ra để phục vụ việc team review và approve code.
+
+#### VII ) Git Rebase.
+
