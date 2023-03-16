@@ -35,3 +35,27 @@ git branch -m TenNhanhCu TenNhanhMoi
 ```
 
 Các bạn đổi tên branch thì chỉ đổi được ở dưới local repo, nếu branch đó đã xuất hiện ở trên remote repo thì khi bạn push nó sẽ tạo một branch mới trên remote repo
+
+#### IV ) Đẩy nhánh lên github.
+```bash
+git push -u origin localBranch 
+```
+Hoặc dùng lệnh này nếu muốn push nhánh hiện tại lên
+```bash
+git push -u origin HEAD 
+```
+
+#### V ) Xóa một branch.
+*Xóa branch ở local:*
+```bash
+git push -D localBranchName 
+```
+*Xóa branch ở remote:*
+```bash
+git push origin -D remoteBranchName 
+```
+*Khi ai đó xóa nhánh trên remote những gõ `git branch -r` vẫn show ra origin branch đó thì ta có thể thực hiện đồng bộ hóa bằng câu lệnh dưới đây*
+```bash
+git fetch -p 
+```
+`-p` nghĩa là "**prune**" sau khi sử dụng câu lệnh git trên những branch không còn trên remote sẽ đồng bộ và xóa khỏi local của bạn.
