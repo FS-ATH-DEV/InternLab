@@ -13,6 +13,8 @@ function App() {
           Learn React
         </a>
         <h1>Cố lên nào bro ❤</h1>
+        <span>Just once more</span>
+        <span>You can try !!</span>
       </header>
     </div>
   )
